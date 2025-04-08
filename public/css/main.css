@@ -103,17 +103,7 @@ body {
     box-shadow: 0px 0px 15px rgba(0, 191, 255, 0.8);
 }
 
-/* Hero Section */
-.hero {
-    background: url('https://www.halowaypoint.com/images/halo-infinite-banner.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    color: white;
-}
+
 
 .hero .overlay {
     position: absolute;
@@ -160,7 +150,7 @@ body {
 }
 
 .btn-custom:hover {
-    background-color:#00bfff;
+    background-color: #00bfff;
     color: #fff;
     transform: scale(1.05);
     box-shadow: 0px 0px 25px rgba(0, 191, 255, 0.8);
@@ -258,4 +248,183 @@ body {
     .section {
         padding: 40px 20px;
     }
+
+    .halo-navbar {
+        padding: 15px;
+    }
+
+    .halo-logo {
+        max-width: 50px;
+    }
+
+    .halo-text {
+        font-size: 18px;
+    }
+
+    .btn-custom {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
 }
+
+
+/* Menú desplegable con diseño Halo */
+.halo-dropdown {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid #00ffcc;
+  box-shadow: 0px 0px 10px #00ffcc;
+}
+
+
+/* Estilos para la sección Modos de Juego */
+.game-modes {
+    padding: 5rem 0;
+    background-color: #0f1923;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-modes::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(16, 142, 233, 0.1) 0%, transparent 30%);
+    z-index: 1;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #108ee9, #0f1923);
+}
+
+.mode-card {
+    background: rgba(15, 25, 35, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(16, 142, 233, 0.2);
+}
+
+.mode-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(16, 142, 233, 0.3);
+    border-color: rgba(16, 142, 233, 0.5);
+}
+
+.mode-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mode-card:hover img {
+    transform: scale(1.05);
+}
+
+.mode-card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.mode-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #108ee9;
+    font-weight: 600;
+}
+
+.mode-card p {
+    color: #a8b2bd;
+    margin-bottom: 0;
+    flex: 1;
+}
+
+/* Efecto de borde en hover */
+.mode-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(16, 142, 233, 0.8), transparent) border-box;
+
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.mode-card:hover::before {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .game-modes {
+        padding: 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .mode-card {
+        margin-bottom: 1.5rem;
+    }
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.floating-image {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: auto;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    animation: float 3s infinite ease-in-out;
+}
+.halo-simple-hero {
+    padding: 80px 0;
+    position: relative;
+}
+
